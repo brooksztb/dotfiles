@@ -8,64 +8,75 @@
 # it gets replaced by the "replace" string.
 matches:
   # Simple text replacement
-  - trigger: ':espanso'
-    replace: 'Hi there!'
+  - trigger: ":espanso"
+    replace: "Hi there!"
 
   # Dates
-  - trigger: ':date'
-    replace: '{{mydate}}'
+  - trigger: ":date"
+    replace: "{{mydate}}"
     vars:
       - name: mydate
         type: date
         params:
-          format: '%m/%d/%Y'
+          format: "%m/%d/%Y"
 
-    # Breadcrumb
-  - trigger: ':bc'
+   # Breadcrumb
+  - trigger: ":bc"
     word: true
-    replace: '{{output}}'
+    replace: "{{output}}"
     vars:
       - name: output
         type: shell
         params:
-          cmd: 'echo `date -v -1d "+[[%Y-%m-%d|<< Yesterday]]"`'' | ''`date -v +1d "+[[%Y-%m-%d|Tommorrow >>]]"`'
+          cmd: "echo `date -v -1d \"+[[%Y-%m-%d|<< Yesterday]]\"`' | '`date -v +1d \"+[[%Y-%m-%d|Tommorrow >>]]\"`"
 
-    # Meeting
-  - trigger: ':meet'
+   # Meeting
+  - trigger: ":meet"
     word: true
     replace: |
-      ## 0000 Meeting
-      - Tags:
-      Meeting Link:
-      Attendees:
-      Tasks:
-      Notes:
+             ## 0000 Meeting
+             - Tags:
+             Meeting Link:
+             Attendees:
+             Tasks:
+             Notes:
 
     # Next Week
-  - triggers: [':>w', ':>mon']
+  - triggers: [ ":>w", ":>mon" ]
     word: true
-    replace: '{{output}}'
+    replace: "{{output}}"
     vars:
       - name: output
         type: shell
         params:
-          cmd: 'echo `date -v +Mon "+[[%Y-%m-%d|Next Week >>]]"`'
+          cmd: "echo `date -v +Mon \"+[[%Y-%m-%d|Next Week >>]]\"`"
+
+    # 2 Weeks
+  - triggers: [ ":>2w" ]
+    word: true
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "echo `date -v +2w \"+[[%Y-%m-%d|Two Weeks >>]]\"`"
 
     # Next Friday
-  - trigger: ':>fri'
+  - trigger: ":>fri"
     word: true
-    replace: '{{output}}'
+    replace: "{{output}}"
     vars:
       - name: output
         type: shell
         params:
-          cmd: 'echo `date -v +Fri "+[[%Y-%m-%d]]"`'
+          cmd: "echo `date -v +Fri \"+[[%Y-%m-%d]]\"`"
+
 
   # Shell commands
-  - trigger: ':shell'
-    replace: '{{output}}'
+  - trigger: ":shell"
+    replace: "{{output}}"
     vars:
       - name: output
         type: shell
         params:
-          cmd: 'echo Hello from your shell'
+          cmd: "echo Hello from your shell"
