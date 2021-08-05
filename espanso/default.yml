@@ -30,12 +30,23 @@ matches:
         params:
           cmd: "echo `date -v -1d \"+[[%Y-%m-%d|<< Yesterday]]\"`' | '`date -v +1d \"+[[%Y-%m-%d|Tommorrow >>]]\"`"
 
+  # Last Friday -> Next Monday
+  - triggers: [ ":<w", ":<fri" ]
+    word: true
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "echo `date -v -Fri \"+[[%Y-%m-%d|<< Last Week]]\"`' | '`date -v +1d \"+[[%Y-%m-%d|Tommorrow >>]]\"`"
+
    # Meeting
   - trigger: ":meet"
     word: true
     replace: |
              ## 0000 Meeting
              - Tags:
+             Time: 
              Meeting Link:
              Attendees:
              Tasks:
@@ -49,7 +60,7 @@ matches:
       - name: output
         type: shell
         params:
-          cmd: "echo `date -v +Mon \"+[[%Y-%m-%d|Next Week >>]]\"`"
+          cmd: "echo `date -v -1d \"+[[%Y-%m-%d|<< Yesterday]]\"`' | '`date -v +Mon \"+[[%Y-%m-%d|Next Week >>]]\"`"
 
     # 2 Weeks
   - triggers: [ ":>2w" ]
@@ -70,6 +81,14 @@ matches:
         type: shell
         params:
           cmd: "echo `date -v +Fri \"+[[%Y-%m-%d]]\"`"
+
+  # standup
+  - trigger: ":>standup"
+    word: true
+    replace: |
+            What did you do since your last post?
+            What do you plan on doing next?
+            Anything you need help with?
 
 
   # Shell commands
