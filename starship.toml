@@ -1,4 +1,3 @@
-
 [aws]
 disabled = true
 
@@ -13,12 +12,15 @@ truncate_to_repo = false
 disabled = true
 
 [git_branch]
-symbol = " "
+symbol = " "
 
 [nodejs]
 format = "using [$symbol$version]($style) "
-symbol = " "
+symbol = " "
+
+[ruby]
+disabled = true
 
 [package]
 format = "[$symbol$version]($style) "
-symbol = " "
+symbol = " "
