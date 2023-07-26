@@ -1,9 +1,99 @@
 {
-  "vetur.validation.style": false,
-  "css.validate": false,
-  "scss.validate": false,
-  "less.validate": false,
+  "git.ignoreMissingGitWarning": true,
+  "nativescript.analytics.enabled": false,
+  "git.confirmSync": false,
+  "git.enableSmartCommit": true,
+  "material-icon-theme.showWelcomeMessage": false,
+  "git.autofetch": true,
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.editor.highlightModifiedTabs": true,
+  "editor.renderWhitespace": "none",
+  "window.zoomLevel": 2,
+  "editor.formatOnPaste": true,
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "prettier.trailingComma": "none",
+  "prettier.singleQuote": true,
+  "prettier.disableLanguages": [],
+  "prettier.jsxSingleQuote": true,
+  "vetur.format.defaultFormatter.html": "prettier",
+  "editor.fontFamily": "MonoLisa",
+  "editor.fontLigatures": true,
+  "prettier.jsxBracketSameLine": true,
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "stylelint.vscode-stylelint",
+    "editor.suggest.insertMode": "replace",
+    "cSpell.fixSpellingWithRenameProvider": false
+  },
+  "[typescriptreact]": {
+    "editor.formatOnSave": true
+  },
+  "diffEditor.ignoreTrimWhitespace": false,
+  "cSpell.userWords": [
+    "axios",
+    "gotmpl",
+    "gridsome",
+    "gsap",
+    "hasura",
+    "hubspot",
+    "jamstack",
+    "Jost",
+    "linting",
+    "lowfare",
+    "nuxt",
+    "pinia",
+    "PODCORE",
+    "prismic",
+    "Spotify",
+    "stylelint",
+    "Turborepo",
+    "unplugin",
+    "VITE",
+    "vuejs"
+  ],
+  "css.lint.emptyRules": "ignore",
+  "prettier.semi": false,
+  "javascript.preferences.quoteStyle": "single",
+  "typescript.preferences.quoteStyle": "single",
+  "headwind.classRegex": {
+    "html": "\\bclass\\s*=\\s*[\\\"\\']([_a-zA-Z0-9\\s\\-\\:\\/]+)[\\\"\\']",
+    "css": "\\B@apply\\s+([_a-zA-Z0-9\\s\\-\\:\\/]+);",
+    "javascript": "(?:\\bclassName\\s*=\\s*[\\\"\\']([_a-zA-Z0-9\\s\\-\\:\\/]+)[\\\"\\'])|(?:\\btw\\s*`([_a-zA-Z0-9\\s\\-\\:\\/]*)`)",
+    "javascriptreact": "(?:\\bclassName\\s*=\\s*[\\\"\\']([_a-zA-Z0-9\\s\\-\\:\\/]+)[\\\"\\'])|(?:\\btw\\s*`([_a-zA-Z0-9\\s\\-\\:\\/]*)`)",
+    "typescript": "(?:\\bclassName\\s*=\\s*[\\\"\\']([_a-zA-Z0-9\\s\\-\\:\\/]+)[\\\"\\'])|(?:\\btw\\s*`([_a-zA-Z0-9\\s\\-\\:\\/]*)`)",
+    "typescriptreact": "(?:\\bclassName\\s*=\\s*[\\\"\\']([_a-zA-Z0-9\\s\\-\\:\\/]+)[\\\"\\'])|(?:\\btw\\s*`([_a-zA-Z0-9\\s\\-\\:\\/]*)`)"
+  },
+  "cSpell.enableFiletypes": ["svelte"],
+  "workbench.sideBar.location": "right",
+  "footsteps.highlightColor": "rgb(0,0,0)",
+  "terminal.integrated.fontFamily": "'FiraCode Nerd Font'",
+  "editor.minimap.enabled": false,
+  "workbench.colorTheme": "Monokai Pro (Filter Spectrum)",
+  "headwind.prependCustomClasses": true,
+  "files.associations": {
+    "*.css": "css"
+  },
+  "workbench.productIconTheme": "material-product-icons",
+  "vite.autoStart": false,
+  "npm.keybindingsChangedWarningShown": true,
+  "files.insertFinalNewline": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll.stylelint": true
-  }
+    "source.fixAll": true
+  },
+  "stylelint.validate": [
+    "css",
+    "scss",
+    "less",
+    "postcss",
+    "vue" // necessary for stylelint diagnostics in .vue <style> tag
+  ],
+  "cSpell.languageSettings": [
+
+  ],
+  "git.ignoreRebaseWarning": true,
 }
